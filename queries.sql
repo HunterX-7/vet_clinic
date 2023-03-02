@@ -65,4 +65,4 @@ select species.name as species, count(animals.name) from animals join species on
 select owners.full_name as owner, animals.name as name from animals join species on species.id = animals.species_id
 join owners on owners.id = animals.owners_id where owners.full_name = 'Jennifer Orwell' and species.id = 2;
 select animals.name from animals join owners on owners.id = animals.owners_id where animals.escape_attempts = 0 and owners.full_name = 'Dean Winchester';
-select owners.full_name as owners, count(animals.name) as count from animals join owners on owners.id = animals.owners_id group by owners.full_name;
+select owners.full_name as owners, count(animals.name) as count from animals join owners on owners.id = animals.owners_id group by owners.full_name order by count desc limit 1;
