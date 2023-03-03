@@ -11,3 +11,22 @@ insert into animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
 insert into animals (name, date_of_birth, escape_attempts, neutered, weight_kg) values ('Boarmon', '2005-06-07', 7, true, 20.4);
 insert into animals (name, date_of_birth, escape_attempts, neutered, weight_kg) values ('Blossom', '1998-10-13', 3, true, 17);
 insert into animals (name, date_of_birth, escape_attempts, neutered, weight_kg) values ('Ditto', '2022-05-14', 4, true, 22);
+
+insert into owners(full_name, age) values ('Sam Smith', 34);
+insert into owners(full_name, age) values ('Jennifer Orwell', 19);
+insert into owners(full_name, age) values ('Bob', 45);
+insert into owners(full_name, age) values ('Melody Pond', 77);
+insert into owners(full_name, age) values ('Dean Winchester', 14);
+insert into owners(full_name, age) values ('Jodie Whittaker', 38);
+
+insert into species(name) values ('Pokemon');
+insert into species(name) values ('Digimon');
+
+update animals set species_id=2 where name like '%mon';
+update animals set species_id=1 where species_id is null;
+
+update animals set owners_id = 1 where name = 'Agumon';
+update animals set owners_id = 2 where name = 'Gabumon' or name = 'Pikachu';
+update animals set owners_id = 3 where name = 'Devimon' or name = 'Plantmon';
+update animals set owners_id = 4 where name = 'Charmander' or name = 'Squirtle' or name = 'Blossom';
+update animals set owners_id = 5 where name = 'Angemon' or name = 'Boarmon';
