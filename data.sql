@@ -30,3 +30,34 @@ update animals set owners_id = 2 where name = 'Gabumon' or name = 'Pikachu';
 update animals set owners_id = 3 where name = 'Devimon' or name = 'Plantmon';
 update animals set owners_id = 4 where name = 'Charmander' or name = 'Squirtle' or name = 'Blossom';
 update animals set owners_id = 5 where name = 'Angemon' or name = 'Boarmon';
+
+insert into vets(name, age, date_of_graduation) values ('William Tatcher', 45, '2020-04-23');
+insert into vets(name, age, date_of_graduation) values ('Maisy Smith', 26, '2019-01-17');
+insert into vets(name, age, date_of_graduation) values ('Stephanie Mendez', 64, '1981-05-04');
+insert into vets(name, age, date_of_graduation) values ('Jack Harkness', 38, '2008-06-08');
+
+insert into specializations(species_id, vet_id) values (1,1);
+insert into specializations(species_id, vet_id) values (1,3);
+insert into specializations(species_id, vet_id) values (2,3);
+insert into specializations(species_id, vet_id) values (2,4);
+
+insert into visits(animal_id, vet_id, date_of_visit) values (1,1, '2020-05-24');
+insert into visits(animal_id, vet_id, date_of_visit) values (1,3, '2020-07-22');
+insert into visits(animal_id, vet_id, date_of_visit) values (2,4, '2021-02-02');
+insert into visits(animal_id, vet_id, date_of_visit) values (3,2, '2020-01-05');
+insert into visits(animal_id, vet_id, date_of_visit) values (3,2, '2020-03-08');
+insert into visits(animal_id, vet_id, date_of_visit) values (3,2, '2020-05-14');
+insert into visits(animal_id, vet_id, date_of_visit) values (4,3, '2021-05-04');
+insert into visits(animal_id, vet_id, date_of_visit) values (5,4, '2021-02-24');
+insert into visits(animal_id, vet_id, date_of_visit) values (6,2, '2019-12-21');
+insert into visits(animal_id, vet_id, date_of_visit) values (6,1, '2020-08-10');
+insert into visits(animal_id, vet_id, date_of_visit) values (6,2, '2021-04-07');
+insert into visits(animal_id, vet_id, date_of_visit) values (7,3, '2019-09-29');
+insert into visits(animal_id, vet_id, date_of_visit) values (8,4, '2020-10-03');
+insert into visits(animal_id, vet_id, date_of_visit) values (8,4, '2020-11-04');
+insert into visits(animal_id, vet_id, date_of_visit) values (9,2, '2019-01-24');
+insert into visits(animal_id, vet_id, date_of_visit) values (9,2, '2019-05-15');
+insert into visits(animal_id, vet_id, date_of_visit) values (9,2, '2020-02-27');
+insert into visits(animal_id, vet_id, date_of_visit) values (9,2, '2020-08-03');
+insert into visits(animal_id, vet_id, date_of_visit) values (10,3, '2020-05-24');
+insert into visits(animal_id, vet_id, date_of_visit) values (10,1, '2021-01-11');

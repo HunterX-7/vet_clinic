@@ -66,3 +66,31 @@ select owners.full_name as owner, animals.name as name from animals join species
 join owners on owners.id = animals.owners_id where owners.full_name = 'Jennifer Orwell' and species.id = 2;
 select animals.name from animals join owners on owners.id = animals.owners_id where animals.escape_attempts = 0 and owners.full_name = 'Dean Winchester';
 select owners.full_name as owners, count(animals.name) as count from animals join owners on owners.id = animals.owners_id group by owners.full_name order by count desc limit 1;
+
+select animals.name from animals join visits on animals.id = visits.animal_id where visits.vet_id = 1 order by visits.date_of_visit desc limit 1;
+
+select vets.name, count(*) from animals join visits on visits.animal_id = animals.id join vets on vets.id = visits.vet_id where vet_id = 3 group by vets.name;
+
+select vets.name, species.name as specialty from species full outer join specializations on species.id = specializations.species_id full outer join 
+vets on specializations.vet_id = vets.id;
+
+select vets.name, animals.name as visit from animals join visits on visits.animal_id = animals.id join vets on vets.id = visits.vet_id 
+where vets.id = 3 and visits.date_of_visit between '2020-03-31' and '2020-08-31';
+
+select animals.name, count(*) from visits join animals on visits.animal_id = animals.id group by animals.name order by count desc limit 1;
+
+select animals.name, visits.date_of_visit from animals join visits on animals.id = visits.animal_id join vets on visits.vet_id = vets.id 
+where vets.id = 2 order by date_of_visit limit 1;
+
+select animals.name, animals.date_of_birth, animals.escape_attempts, animals.neutered, animals.weight_kg, species.name as specie, 
+owners.full_name as owner, vets.name as vet, vets.age as vet_age, visits.date_of_visit from animals 
+full outer join species on animals.species_id = species.id full outer join owners on animals.owners_id = owners.id 
+full outer join visits on animals.id = visits.animal_id join vets on visits.vet_id = vets.id order by date_of_visit desc limit 1;
+
+select vets.name as vet, count(*) from visits join vets on vets.id = visits.vet_id where vets.name = (select vet 
+from (select vets.name as vet, species.name as specialties 
+from species join specializations on species.id = specializations.species_id full outer join vets on vets.id = specializations.vet_id) 
+as no_specialty where specialties is null) group by vets.name;
+
+select species.name, count(*) from animals join species on animals.species_id = species.id join visits on animals.id = visits.animal_id 
+join vets on visits.vet_id = vets.id where vets.id = 2 group by species.name;
