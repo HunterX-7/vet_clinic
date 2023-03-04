@@ -16,3 +16,7 @@ alter table animals add column owners_id integer;
 select * from animals;
 alter table animals add constraint fk_2 foreign key(owners_id) references owners(id);
 commit;
+
+create table vets(id int generated always as identity, name varchar(60), age integer, date_of_graduation date, primary key(id));
+create table specializations(species_id int references species(id), vet_id int references vets(id), primary key(species_id, vet_id));
+create table visits(animal_id int references animals(id), vet_id int references vets(id), date_of_visit date, primary key(animal_id, vet_id, date_of_visit));
