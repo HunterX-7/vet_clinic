@@ -20,3 +20,9 @@ commit;
 create table vets(id int generated always as identity, name varchar(60), age integer, date_of_graduation date, primary key(id));
 create table specializations(species_id int references species(id), vet_id int references vets(id), primary key(species_id, vet_id));
 create table visits(animal_id int references animals(id), vet_id int references vets(id), date_of_visit date, primary key(animal_id, vet_id, date_of_visit));
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+create index visits_animal_id on visits(animal_id asc);
+create index visits_vets_id on visits(vet_id asc);
+create index owners_email on owners(email asc);
