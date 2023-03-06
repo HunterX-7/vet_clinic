@@ -42,6 +42,11 @@
 
  </br>
 
+## 🛠 Schema Diagram <a name="built-with"></a>
+
+ <p align='center'><img  src="schema.PNG" width="auto" height="auto" ></p>
+
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
