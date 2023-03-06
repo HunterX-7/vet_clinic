@@ -8,7 +8,8 @@ create table if not exists medical_history_treatment(treatment_id references tre
 
 create table if not exists treatments(id int generated always as identity, type varchar(30), name varchar(30), primary key(id));
 
-create table if not exists invoice_items(id int generated always as identity, unit_price decimal, quantity integer, total_price decimal, invoice_id int, treatment_id int, primary key(id));
+create table if not exists invoice_items(id int generated always as identity, unit_price decimal, quantity integer, total_price decimal, invoice_id int, treatment_id int, 
+primary key(id));
 alter table invoice_items add foreign key(invoice_id) references invoices(id);
 alter table invoice_items add foreign key(treatment_id) references treatments(id);
 
