@@ -4,7 +4,8 @@ create table if not exists patients(id int generated always as identity, name va
 
 create table if not exists medical_histories(id int generated always as identity, admitted_at timestamp, patient_id int references patients(id), status varchar(20) primary key(id));
 
-create table if not exists medical_history_treatment(treatment_id references treatments(id), medical_histories_id references medical_histories(id));
+create table if not exists medical_history_treatment(treatment_id references treatments(id), medical_histories_id references medical_histories(id), 
+primary key(treatment_id));
 
 create table if not exists treatments(id int generated always as identity, type varchar(30), name varchar(30), primary key(id));
 
