@@ -52,7 +52,7 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 <ul>
-  <li>postgresSQL</li>
+  <li>PostgreSQL</li>
 </ul>
 
 <!-- Features -->
@@ -122,7 +122,6 @@ psql -U username -f queries.sql
 👤 **Francisco Quintero**
 
 - GitHub: [@HunterX-7](https://github.com/HunterX-7)
-- Twitter: [@franquin07](https://twitter.com/franquin07)
 - LinkedIn: [Francisco Quintero](https://www.linkedin.com/in/francisco-asis-quintero-cede%C3%B1o/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
